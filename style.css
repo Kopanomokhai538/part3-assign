@@ -1,0 +1,429 @@
+/* ============================================================
+   Food Factory — Main Stylesheet
+   Covers: index.html, about.html, menu.html,
+           enquiry.html, contact.html
+   Fonts: Oswald (headings) + Lato (body) via Google Fonts
+   Add this inside every <head>:
+   <link rel="stylesheet" href="style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+   ============================================================ */
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    background-color: #F8F4EF;
+    color: #1A1A1A;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── CSS Custom Properties ── */
+:root {
+    --red:      #E63946;
+    --gold:     #F4A261;
+    --charcoal: #1A1A1A;
+    --surface:  #F8F4EF;
+    --white:    #FFFFFF;
+    --border:   #D9D9D9;
+    --nav-bg:   #1A1A1A;
+    --nav-link: #F8F4EF;
+    --shadow:   0 4px 16px rgba(0,0,0,0.10);
+    --radius:   6px;
+    --max-w:    960px;
+}
+
+/* ── Navigation ── */
+nav, body > a, body > a + a {
+    /* handled below via the nav wrapper */
+}
+
+/* Target the inline link nav at the top of each page */
+body > a {
+    display: none; /* hidden — replaced by styled nav below */
+}
+
+/* Build a real nav bar using the raw anchor tags */
+body {
+    /* Wrap the loose <a> links visually */
+}
+
+/* Since the HTML uses bare <a> tags directly in <body>,
+   we style them collectively to form a nav strip */
+body > a:first-of-type,
+body > a {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--nav-link);
+    background: var(--nav-bg);
+    padding: 14px 20px;
+    transition: background 0.2s, color 0.2s;
+}
+
+body > a:hover {
+    background: var(--red);
+    color: var(--white);
+}
+
+/* Nav container effect — make all top-level links sit in one bar */
+body > a:first-of-type {
+    padding-left: 28px;
+}
+
+/* The nav strip itself */
+body::before {
+    content: '';
+    display: block;
+    background: var(--nav-bg);
+    height: 4px; /* red top accent line */
+}
+
+/* Override the | separators: hide them */
+body > a + a::before {
+    content: none;
+}
+
+/* ── Page Header / Brand Bar ── */
+body > h1:first-of-type,
+body > h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    max-width: var(--max-w);
+    margin: 48px auto 4px;
+    padding: 0 24px;
+    position: relative;
+}
+
+/* Signature red underline stamp on every h1 */
+body > h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--red);
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+/* ── Logo Image ── */
+body > img {
+    display: block;
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    margin: 24px auto 32px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* ── Main Content Wrapper ── */
+body > h2,
+body > p,
+body > ul,
+body > table,
+body > form {
+    max-width: var(--max-w);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* ── Headings ── */
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-top: 40px;
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+/* ── Paragraphs ── */
+p {
+    margin-bottom: 16px;
+    color: #333333;
+    max-width: 680px;
+}
+
+/* ── Lists (About & Index) ── */
+ul {
+    list-style: none;
+    margin-bottom: 24px;
+    padding-left: 24px;
+}
+
+ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: #333333;
+}
+
+ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-size: 0.8rem;
+    top: 3px;
+}
+
+/* ── Menu Table (menu.html) ── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 32px auto 48px;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    font-size: 0.95rem;
+}
+
+table[border] {
+    border: none; /* override inline attribute */
+}
+
+thead, tr:first-child {
+    background: var(--charcoal);
+    color: var(--white);
+}
+
+th {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 14px 18px;
+    text-align: left;
+    background: var(--charcoal);
+    color: var(--white);
+    border: none;
+}
+
+td {
+    padding: 13px 18px;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+    color: #333333;
+}
+
+/* Price column — stand out */
+td:last-child {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--red);
+    white-space: nowrap;
+}
+
+/* Category column */
+td:first-child {
+    font-weight: 700;
+    color: var(--charcoal);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* Zebra rows */
+tr:nth-child(even) td {
+    background-color: #FAF7F4;
+}
+
+tr:not(:first-child):hover td {
+    background-color: #FFF0E8;
+    transition: background 0.15s;
+}
+
+/* ── Enquiry Form (enquiry.html) ── */
+form {
+    background: var(--white);
+    padding: 40px 36px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-top: 28px;
+    margin-bottom: 56px;
+    max-width: 560px;
+}
+
+label {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+    margin-top: 20px;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    display: block;
+    width: 100%;
+    padding: 11px 14px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    margin-top: 4px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Remove old br spacing — form uses block elements now */
+form br {
+    display: none;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 13px 36px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--red);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+input[type="submit"]:hover {
+    background: #c62b37;
+    transform: translateY(-1px);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* ── Contact Page (contact.html) ── */
+/* Address blocks */
+body > h2 + p {
+    font-weight: 700;
+    color: var(--charcoal);
+}
+
+/* Opening hours list */
+body > ul li {
+    font-size: 0.95rem;
+}
+
+/* ── Footer Spacer ── */
+body > *:last-child {
+    margin-bottom: 64px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+    body > a {
+        padding: 12px 14px;
+        font-size: 0.78rem;
+    }
+
+    body > h1 {
+        font-size: 1.8rem;
+        margin-top: 32px;
+    }
+
+    table {
+        font-size: 0.82rem;
+    }
+
+    th, td {
+        padding: 10px 12px;
+    }
+
+    form {
+        padding: 28px 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    body > a {
+        padding: 10px 10px;
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* ── Accessibility ── */
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
