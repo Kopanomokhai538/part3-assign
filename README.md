@@ -93,3 +93,9 @@ The architecture spans a coordinated implementation timeline:
 ## References
 * Food Factory, 2026. *Core Restaurant Directory & Operational Strategy Profile*. Bayswater, Bloemfontein[cite: 7].
 * Google Developers, 2026. *Google Maps JavaScript API Standard Guide*. Available at: https://developers.google.com/maps/documentation/javascript [Accessed 19 June 2026].
+
+![mobile view](<assets/Screenshot 2026-06-19 225245.png>)
+![tablet view](<assets/Screenshot 2026-06-19 225304.png>)
+![desktop view](<assets/Screenshot 2026-06-19 225329.png>)
+
+[wireframe](FoodFactory_Wireframes.pdf)

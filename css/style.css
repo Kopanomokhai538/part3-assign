@@ -99,19 +99,14 @@ body {
 }
 
 /* ── Navigation ── */
-nav, body > a, body > a + a {
-    /* handled below via the nav wrapper */
-}
-
 /* Target the inline link nav at the top of each page */
 body > a {
     display: none; /* hidden — replaced by styled nav below */
 }
 
 /* Build a real nav bar using the raw anchor tags */
-body {
-    /* Wrap the loose <a> links visually */
-}
+/* Build a real nav bar using the raw anchor tags */
+/* (no additional body rules here; base body styles declared above) */
 
 /* Since the HTML uses bare <a> tags directly in <body>,
    we style them collectively to form a nav strip */
