@@ -5,6 +5,7 @@
 * **Student Name:** [Thatayaone Mokhai]
 * **Student Number:** [10506435]
 * **Course Code:** WEDE5020POE
+* **deployed link [ https://kopanomokhai538.github.io/part3-assign/]
 * **Date:** June 2026
 
 ---
